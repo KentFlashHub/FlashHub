@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import "./Menu.css"
 import Questions from "./Questions-amico (1).png";
@@ -25,8 +26,8 @@ const Menu = () => {
 
 
     const btnActiveStyling = {
-        backgroundColor: "rgba(23, 68, 83, 1)",
-        color: "white",
+        // backgroundColor: "rgba(23, 68, 83, 1)",
+        // color: "white",
         opacity: "1"
     }
 
@@ -35,8 +36,6 @@ const Menu = () => {
         btnClicked[activeMenuOption.get()].state.set(false)
         activeMenuOption.set(menuOption.index)
         menuOption.state.set(true)
-
-
 
     };
     return (
@@ -52,9 +51,25 @@ const Menu = () => {
                 <button>Saved</button> */}
             </div>
             <button className='menuCreatedBtn'>Created <i className="bi bi-chevron-down"></i></button>
-            <img src={Questions} width="10%" />
-            <button className='menuCreateFlashcard'>Create Flashcards <i className="bi bi-chevron-down"></i></button>
+            <img src={Questions} width="20%" />
 
+            <div className="new-card">
+                <img src="/plus-circle.svg" alt="" />Create Flashcards
+            </div>
+
+            {/* FLASH CARD */}
+            <div className="container">
+                <div className="input-field">
+                    <label htmlFor="question" className="question">Question</label>
+                    <textarea className="card-input" placeholder="Your question" name="question" id="input-question"></textarea>
+                </div>
+
+                <div className="input-field">
+                    <label htmlFor="answer" className="answer">Answer</label>
+                    <textarea className="card-input" placeholder="Your answer" name="answer" id="input-answer"></textarea>
+                </div>
+                <button className="submit">Create a new card</button>
+            </div>
 
 
         </>

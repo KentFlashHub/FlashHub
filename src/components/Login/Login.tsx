@@ -14,13 +14,25 @@ interface LoginProps {
 
 export default function Login({ api, loginState, activePageState, clientId }: LoginProps) {
     return (
-        <div>
-            <form className="form-container">
-                <div className="form-field">
-                    <GoogleAuth clientId={clientId.get()} api={api} activePageState={activePageState} loginState={loginState} />
-                </div>
-            </form>
+        <div className="landing-container">
 
+            <div className="landing-img">
+                <img src="/logoimg.png" alt="" className="logo" width="400" height="400" />
+            </div>
+
+            <div className="sologan">
+                <h2>Unlock your potential {' '}
+                    <span className='green-text'>flashcard & marterial</span>
+                    {' '} at your fingertips!
+                </h2>
+                <form className="form-container">
+
+                    <p>Sign Up</p>
+                    <div className="form-field">
+                        <GoogleAuth clientId={clientId.get()} api={api} activePageState={activePageState} loginState={loginState} />
+                    </div>
+                </form>
+            </div>
 
         </div>
     );

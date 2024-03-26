@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-.profileHeader{
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); */
+.profileHeader {
     background-color: rgba(23, 69, 83, 0.8);
     height: 10vh;
     position: relative;
 }
-.appName{
+
+.appName {
     color: white;
     font-family: Lato;
     font-size: 1rem;
@@ -16,7 +17,7 @@
     letter-spacing: 0.1rem;
 }
 
-.profileAvatar{
+.profileAvatar {
     position: absolute;
     right: 0;
     top: 50%;

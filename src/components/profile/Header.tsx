@@ -10,7 +10,7 @@ interface Props {
 const Header = ({ avatarName, bgColour }: Props) => {
     return (
         <div className='profileHeader'>
-            <span className='appName'>FLASH HUB</span>
+            <span className='appName'>FLASH fHUB</span>
             <div className="profileAvatar">
                 <Avatar avatarName={avatarName} bgColour={bgColour}></Avatar>
             </div>

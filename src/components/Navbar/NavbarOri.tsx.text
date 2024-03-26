@@ -6,7 +6,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -44,38 +43,42 @@ export default function Navbar(props: NavbarProps): JSX.Element {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
-
-
-
     return (
         // <AppBar position="static" sx={{ backgroundColor: 'rgba(23, 69, 83, 0.8)', boxShadow: 'none', height: '7%' }}>
 
-        <div className="navbarContainer">
-            <div className="navbarHeader">
-                {/* Add an if statement */}
+        <div className="navbarHeader">
+            {/* Add an if statement */}
+            <span className='appName' onClick={() => {
+                if (loginState.get().isLogged) {
+                    handleClick("home")
+                }
 
-                <h1><img src="lilleaf.png" alt="" />FlashHub</h1>
+            }}>FLASH HUB</span>
+            {/* <h1>Flash Hub</h1> */}
 
-                <div className="navbarToolBar">
-
+            <div className="navbarToolBar">
+                <Toolbar sx={{ '&': { justifyContent: 'flex-end' } }}>
                     {(() => {
                         switch (activePageState.get()) {
                             case "login":
-                                return <button onClick={() => handleClick("home")}>  Get Started  </button>;
+                                return <Button color="inherit" onClick={() => handleClick("home")}>  Home  </Button>;
                             default:
                                 const items = [
-
+                                    (<Button color="inherit" sx={{ color: 'black', '&': { padding: '0px 20px' } }} onClick={() => handleClick("login")}  >  Login  </Button>),
+                                    (<Button color="inherit" sx={{ color: 'black', '&': { padding: '0px 20px' } }} onClick={() => handleClick("about")}>  About Us  </Button>),
                                     (<Box sx={{ flexGrow: 0 }}>
-                                        <div className="burgerMenu" onClick={handleOpenUserMenu}>
-                                            <div className="burgerLine"></div>
-                                            <div className="burgerLine"></div>
-                                            <div className="burgerLine"></div>
-                                        </div>
-
+                                        <Tooltip title="Open settings">
+                                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                                <Avatar src={loginState.get().profile_url} alt={loginState.get().first_name + " " + loginState.get().last_name} />
+                                            </IconButton>
+                                        </Tooltip>
                                         <Menu
                                             sx={{
-                                                mt: '30px',
-
+                                                mt: '45px',
+                                                // '& .MuiPaper-root': {
+                                                //     backgroundColor: '#212227',
+                                                //     color: 'white',
+                                                // },
                                             }}
                                             id="menu-appbar"
                                             anchorEl={anchorElUser}
@@ -96,7 +99,7 @@ export default function Navbar(props: NavbarProps): JSX.Element {
                                                 <MenuItem key={setting} onClick={handleClick.bind(null, "profile")}
                                                     sx={{
                                                         '&:hover': {
-                                                            backgroundColor: '#fff4f2',
+                                                            backgroundColor: '#3f3f3f',
                                                         },
                                                         '&': {
                                                             padding: '15px 40px',
@@ -111,15 +114,22 @@ export default function Navbar(props: NavbarProps): JSX.Element {
                                 return items;
                         }
                     })()}
-
-                </div>
-
-
-
-
+                </Toolbar>
             </div>
-            <hr />
-        </div >
+
+
+
+
+        </div>
+        // </AppBar>
     );
 }
+
+
+
+
+
+
+
+
 
