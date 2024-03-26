@@ -1,38 +1,47 @@
-.menuMain {
-    /* border: 1px solid rgba(0, 0, 0, 0.2); */
-    min-width: 95%;
+.mainContent {
     display: flex;
     justify-content: space-between;
+    padding: 50px;
+    gap: 100px;
+}
+
+.rightLayout {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 }
+
+.menuMain {
+    flex-direction: column;
+    flex: 0 0 100px;
+
+}
+
 
 .menuMain button:hover {
     background-color: #48B35C;
     color: white;
-    opacity: 4;
+    opacity: 1;
 }
 
-.menuMain button,
+.menuButton,
 .menuCreatedBtn {
-    font-weight: bold;
+
     font-size: 0.8rem;
-    background-color: white;
-    opacity: 0.2;
-    padding: 0.4rem 1.3rem;
-    border-radius: 5px;
-    /* border-width: 0.89px 0.89px 0px 0.89px; */
-    min-width: 15%;
-    /* border-color: #5BC36E; */
+    opacity: 0.4;
+    background-color: #48B35C;
+    width: 200px;
+    height: 50px;
     border: none;
-}
-
-.menuCreatedBtn {
-    border-radius: 4px;
-    border-width: 0.89px;
-    padding: 0.3rem 0.1rem;
-    align-self: start;
-    margin-left: 2.5%;
-    min-width: 13%;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    font-weight: 800;
+    font-size: 16px;
 
 }
 
@@ -40,11 +49,11 @@
 /* FLASHCARH CREATE */
 .container {
     background: transparent;
-    color: F7F8FA;
+    color: #5BC36E;
     border: 1px solid #5BC36E;
     box-shadow: 0px 10px 40px rgba(903, 87, 98, 0.15);
     padding: 15px;
-    margin: auto;
+    margin: 100px;
     position: flex;
     border-radius: 10px;
     height: fit-content;
@@ -57,6 +66,7 @@
 .question,
 .answer {
     font-size: 20px;
+    font-weight: 500;
 }
 
 .card-input {
@@ -97,31 +107,34 @@
 }
 
 .new-card {
-    line-height: 49px;
+
+    line-height: 80px;
     font-weight: 800;
-    font-size: 16px;
-    background-color: #5BC36E;
+    font-size: 18px;
     text-align: center;
+    border: dashed #5BC36E;
     border-radius: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
     position: flex;
     right: 30px;
     top: 16px;
-    color: #FFF;
+    color: #5BC36E;
     vertical-align: middle;
-    box-sizing: border-box;
+
 }
 
 .new-card:hover {
     cursor: pointer;
-    background-color: #48B35C;
+    color: #48B35C;
 }
 
 .new-card img {
+
     vertical-align: middle;
     display: inline-block;
     margin-right: 5px;
     width: 19px;
     margin-top: -1px;
+    color: #48B35C;
 }

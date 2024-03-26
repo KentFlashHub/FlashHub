@@ -40,37 +40,37 @@ const Menu = () => {
     };
     return (
         <>
-            <div className="menuMain">
+            <div className="mainContent">
 
-                {btnClicked.map((menuOption) =>
-                    <button onClick={() => { handleClick(menuOption) }} style={menuOption.state.get() ? btnActiveStyling : {}} > {menuOption.text} </button>
-                )}
-                {/* <button onClick={handleClick} style={isClicked ? btnActiveStyling : {}} >Flashcards</button>
-                <button>Files</button>
-                <button>Posts</button>
-                <button>Saved</button> */}
-            </div>
-            <button className='menuCreatedBtn'>Created <i className="bi bi-chevron-down"></i></button>
-            <img src={Questions} width="20%" />
+                <div className="menuMain">
 
-            <div className="new-card">
-                <img src="/plus-circle.svg" alt="" />Create Flashcards
-            </div>
-
-            {/* FLASH CARD */}
-            <div className="container">
-                <div className="input-field">
-                    <label htmlFor="question" className="question">Question</label>
-                    <textarea className="card-input" placeholder="Your question" name="question" id="input-question"></textarea>
+                    {btnClicked.map((menuOption) =>
+                        <button className="menuButton" onClick={() => { handleClick(menuOption) }} style={menuOption.state.get() ? btnActiveStyling : {}} > {menuOption.text} </button>
+                    )}
+                    {/* <button className='menuCreatedBtn'>Created <i className="bi bi-chevron-down"></i></button> */}
                 </div>
 
-                <div className="input-field">
-                    <label htmlFor="answer" className="answer">Answer</label>
-                    <textarea className="card-input" placeholder="Your answer" name="answer" id="input-answer"></textarea>
-                </div>
-                <button className="submit">Create a new card</button>
-            </div>
+                <div className="rightLayout">
+                    <img src={Questions} width="40%" />
+                    <div className="new-card">
+                        <img src="/plus-circle.svg" alt="" />Create Flashcards
+                    </div>
+                    {/* FLASH CARD */}
+                    <div className="container">
+                        <div className="input-field">
+                            <label htmlFor="question" className="question">Question</label>
+                            <textarea className="card-input" placeholder="Your question" name="question" id="input-question"></textarea>
+                        </div>
 
+                        <div className="input-field">
+                            <label htmlFor="answer" className="answer">Answer</label>
+                            <textarea className="card-input" placeholder="Your answer" name="answer" id="input-answer"></textarea>
+                        </div>
+                        <button className="submit">Create a new card</button>
+                    </div>
+                </div>
+
+            </div>
 
         </>
     )
